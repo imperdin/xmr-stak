@@ -926,7 +926,7 @@ void executor::result_report(std::string& out)
 		}
 	}
 	else
-		out.append("Yay! No errors.\n");
+		out.append("No errors.\n");
 }
 
 void executor::connection_report(std::string& out)
@@ -970,7 +970,7 @@ void executor::connection_report(std::string& out)
 		}
 	}
 	else
-		out.append("Yay! No errors.\n");
+		out.append("No errors.\n");
 }
 
 void executor::print_report(ex_event_name ev)

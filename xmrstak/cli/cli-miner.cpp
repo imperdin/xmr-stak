@@ -114,7 +114,7 @@ void help()
 	jconf::GetAlgoList(algos);
 	cout<< "Supported coin options: " << endl << algos << endl;
 	cout<< "Version: " << get_version_str_short() << endl;
-	cout<<"Brought to by fireice_uk and psychocrypt under GPLv3."<<endl;
+	cout<<"Brought to by Wolfie, fireice_uk, psychocrypt & Imperdin under GPLv3."<<endl;
 }
 
 bool read_yes_no(const char* str)
@@ -771,21 +771,21 @@ int main(int argc, char *argv[])
 	printer::inst()->print_str("-------------------------------------------------------------------\n");
 	printer::inst()->print_str(get_version_str_short().c_str());
 	printer::inst()->print_str("\n\n");
-	printer::inst()->print_str("Brought to you by fireice_uk and psychocrypt under GPLv3.\n");
-	printer::inst()->print_str("Based on CPU mining code by wolf9466 (heavily optimized by fireice_uk).\n");
+	printer::inst()->print_str("Brought to you by Wolfie, fireice_uk, psychocrypt & Imperdin under GPLv3.\n");
+	printer::inst()->print_str("Based on CPU mining code by Wolfie ( optimized by fireice_uk).\n");
 #ifndef CONF_NO_CUDA
 	printer::inst()->print_str("Based on NVIDIA mining code by KlausT and psychocrypt.\n");
 #endif
 #ifndef CONF_NO_OPENCL
-	printer::inst()->print_str("Based on OpenCL mining code by wolf9466.\n");
+	printer::inst()->print_str("Based on OpenCL mining code by Wolfie & Imperdin.\n");
 #endif
 	char buffer[64];
-	snprintf(buffer, sizeof(buffer), "\nConfigurable dev donation level is set to %.1f%%\n\n", fDevDonationLevel * 100.0);
+	snprintf(buffer, sizeof(buffer), "\n No Dev Fees because no fee is love no fee is life\n\n);
 	printer::inst()->print_str(buffer);
-	printer::inst()->print_str("You can use following keys to display reports:\n");
-	printer::inst()->print_str("'h' - hashrate\n");
-	printer::inst()->print_str("'r' - results\n");
-	printer::inst()->print_str("'c' - connection\n");
+	printer::inst()->print_str("You can use following keys to issue command:\n");
+	printer::inst()->print_str("'h' - Hashrate\n");
+	printer::inst()->print_str("'r' - Results\n");
+	printer::inst()->print_str("'c' - Connection\n");
 	printer::inst()->print_str("-------------------------------------------------------------------\n");
 	printer::inst()->print_msg(L0, "Mining coin: %s", jconf::inst()->GetMiningCoin().c_str());
 

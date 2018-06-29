@@ -27,8 +27,10 @@ POOLCONF],
  *    electroneum
  *    graft
  *    haven (automatic switch with block version 3 to cryptonight_haven)
+ *    italo
  *    intense
  *    ipbc
+ *    tube
  *    karbo
  *    masari
  *    monero7 (use this for Monero's new PoW)
@@ -46,6 +48,8 @@ POOLCONF],
  *    cryptonight_v7
  *    # 4MiB scratchpad memory
  *    cryptonight_haven
+ *    cryptonight_italo
+ *    cryptonight_saber
  *    cryptonight_heavy
  */
 
