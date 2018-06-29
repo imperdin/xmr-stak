@@ -30,7 +30,7 @@ POOLCONF],
  *    italo
  *    intense
  *    ipbc
- *    tube
+ *    bittube
  *    karbo
  *    masari
  *    monero7 (use this for Monero's new PoW)
