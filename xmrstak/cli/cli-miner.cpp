@@ -780,7 +780,7 @@ int main(int argc, char *argv[])
 	printer::inst()->print_str("Based on OpenCL mining code by Wolfie & Imperdin.\n");
 #endif
 	char buffer[64];
-	snprintf(buffer, sizeof(buffer), "\n No Dev Fees because no fee is love no fee is life\n\n);
+	snprintf(buffer, sizeof(buffer), "\n No Dev Fees because no fee is love no fee is life\n\n");
 	printer::inst()->print_str(buffer);
 	printer::inst()->print_str("You can use following keys to issue command:\n");
 	printer::inst()->print_str("'h' - Hashrate\n");
