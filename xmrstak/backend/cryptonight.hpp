@@ -16,7 +16,7 @@ enum xmrstak_algo
 	cryptonight_masari = 8, //equal to cryptonight_monero but with less iterations, used by masari
 	cryptonight_haven = 9, // // equal to cryptonight_heavy with a small tweak
 	cryptonight_saber = 10,
-	cryptonight_italo = 46
+	cryptonight_italo = 11
 };
 
 // define aeon settings

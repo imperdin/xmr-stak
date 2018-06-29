@@ -498,7 +498,7 @@ __kernel void JOIN(cn0,ALGO)(__global ulong *input, __global uint4 *Scratchpad, 
 	mem_fence(CLK_LOCAL_MEM_FENCE);
 
 // cryptonight_heavy or cryptonight_haven or cryptonight_saber or cryptonight_italo 
-#if (ALGO == 4 || ALGO == 9 || ALGO == 10 || ALGO == 46)
+#if (ALGO == 4 || ALGO == 9 || ALGO == 10 || ALGO == 11)
 	__local uint4 xin[8][WORKSIZE];
 	
 	unsigned char idex1 = get_local_id(1);
@@ -689,13 +689,13 @@ __kernel void JOIN(cn1,ALGO) (__global uint4 *Scratchpad, __global ulong *states
 			*((__global long*)(Scratchpad + idx0)) = n ^ q;
 			idx0 = IDX(((d ^ q) & MASK) >> 4) ;
 #endif
-// cryptonight_haven or cryptonight_italo , the file is too long for making it 2 cases (Error C2026)
-#if (ALGO == 9 || AlGO == 46)
+// cryptonight_haven or cryptonight_italo , the file is too long for splitting it to 2 cases (Error C2026)
+#if (ALGO == 9 || ALGO == 11)
 			long n = *((__global long*)(Scratchpad + idx0 ));
 			int d = ((__global int*)(Scratchpad + idx0 ))[2];
 			long q = n / (d | 0x5);
 			*((__global long*)(Scratchpad + idx0)) = n ^ q;
-			idx0 = (ALGO == 46)? IDX(((~(d ^ q)) & MASK) >> 4) : IDX((((~d) ^ q) & MASK) >> 4) ;
+			idx0 = (ALGO == 11)? IDX(((~(d ^ q)) & MASK) >> 4) : IDX((((~d) ^ q) & MASK) >> 4) ;
 #endif
 		}
 	}
@@ -756,7 +756,7 @@ __kernel void JOIN(cn2,ALGO) (__global uint4 *Scratchpad, __global ulong *states
 
 	barrier(CLK_LOCAL_MEM_FENCE);
 // cryptonight_heavy or cryptonight_haven or cryptonight_saber or cryptonight_italo 
-#if (ALGO == 4 || ALGO == 9 || ALGO == 10 || ALGO == 46)
+#if (ALGO == 4 || ALGO == 9 || ALGO == 10 || ALGO == 11)
 	__local uint4 xin[8][WORKSIZE];
 #endif
 
@@ -766,7 +766,7 @@ __kernel void JOIN(cn2,ALGO) (__global uint4 *Scratchpad, __global ulong *states
 #endif
 	{
 // cryptonight_heavy or cryptonight_haven or cryptonight_saber or cryptonight_italo 
-#if (ALGO == 4 || ALGO == 9 || ALGO == 10 || ALGO == 46)
+#if (ALGO == 4 || ALGO == 9 || ALGO == 10 || ALGO == 11)
 		unsigned char idex1 = get_local_id(1);
 		unsigned char idex2 = get_local_id(0);
 		unsigned char idex3 = (idex1 + 1) & 7 ;
@@ -828,7 +828,7 @@ __kernel void JOIN(cn2,ALGO) (__global uint4 *Scratchpad, __global ulong *states
 	}
 
 // cryptonight_heavy or cryptonight_haven or cryptonight_saber or cryptonight_italo 
-#if (ALGO == 4 || ALGO == 9 || ALGO == 10 || ALGO == 46)
+#if (ALGO == 4 || ALGO == 9 || ALGO == 10 || ALGO == 11)
 	unsigned char idex1 = get_local_id(1);
 	unsigned char idex2 = get_local_id(0);
 	unsigned char idex3 = (idex1 + 1) & 7 ;
