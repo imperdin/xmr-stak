@@ -687,15 +687,15 @@ __kernel void JOIN(cn1,ALGO) (__global uint4 *Scratchpad, __global ulong *states
 			int d = ((__global int*)(Scratchpad + idx0 ))[2];
 			long q = n / (d | 0x5);
 			*((__global long*)(Scratchpad + idx0)) = n ^ q;
-			idx0 = IDX(((d ^ q) & MASK) >> 4) ;
+			idx0 = IDX(((d ^ q) & MASK) >> 4);
 #endif
-// cryptonight_haven or cryptonight_italo , the file is too long for splitting it to 2 cases (Error C2026)
+// cryptonight_haven or cryptonight_italo
 #if (ALGO == 9 || ALGO == 11)
 			long n = *((__global long*)(Scratchpad + idx0 ));
 			int d = ((__global int*)(Scratchpad + idx0 ))[2];
 			long q = n / (d | 0x5);
 			*((__global long*)(Scratchpad + idx0)) = n ^ q;
-			idx0 = (ALGO == 11)? IDX(((~(d ^ q)) & MASK) >> 4) : IDX((((~d) ^ q) & MASK) >> 4) ;
+			idx0 = IDX(((~(d ^ q)) & MASK) >> 4) ;
 #endif
 		}
 	}
