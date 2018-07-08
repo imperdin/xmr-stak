@@ -342,7 +342,7 @@ __global__ void cryptonight_core_gpu_phase2( int threads, int bfactor, int parti
 
 				idx0 = d ^ q;
 			}
-      else if(ALGO == cryptonight_haven)
+      else if(ALGO == cryptonight_haven || ALGO == cryptonight_italo)
 			{
 				idx0 = (( idx0 & MASK ) >> 3);
 				int64_t n = loadGlobal64<uint64_t>( ( (uint64_t *) long_state ) + idx0 );
@@ -352,20 +352,8 @@ __global__ void cryptonight_core_gpu_phase2( int threads, int bfactor, int parti
 				if(sub&1)
 					storeGlobal64<uint64_t>( ( (uint64_t *) long_state ) + idx0, n ^ q );
 
-				idx0 = (~d) ^ q;
+				idx0 = d ^ (~q);
 			}
-      else if(ALGO == cryptonight_italo)
-			{
-				idx0 = (( idx0 & MASK ) >> 3);
-				int64_t n = loadGlobal64<uint64_t>( ( (uint64_t *) long_state ) + idx0 );
-				int32_t d = loadGlobal32<uint32_t>( (uint32_t*)(( (uint64_t *) long_state ) + idx0 + 1u ));
-				int64_t q = n / (d | 0x5);
-
-				if(sub&1)
-					storeGlobal64<uint64_t>( ( (uint64_t *) long_state ) + idx0, n ^ q );
-
-				idx0 = ~(d ^ q);
-			}	
 		}
 	}
 
